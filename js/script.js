@@ -18,7 +18,6 @@ var output ;
 let header ;
 
 const basemapEnum = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-      // attribution: '&copy; <a >OpenStreetMap</a> contributors'
 }).addTo(map);
 
 // --------- ========================= Layer icon ========================= ---------
@@ -38,18 +37,8 @@ IconStyleTwo = L.icon({
 
 
 var dams =  L.esri.featureLayer({
-      // var dams =  L.esri.Cluster.featureLayer({
       url: "https://services.arcgis.com/90tNmoLpchYB2Gc5/arcgis/rest/services/Atlas_of_Drowned_Towns_WFL1/FeatureServer/0",
-      // filter: function (feature) {
-      //       // if (feature.properties.Completed !== "1936.0") return true
-      //       // return String(parseInt(feature.properties.Completed)) == "1936"
-      //       // return (feature.properties.Name == "Hoover Dam");
-      //       if (feature.properties.Name == "Hoover Dam") return true
-      // },
-      
-      // where: "Completed = "+ document.getElementById("slidervalue").textContent+ ".0" + ""/*+ document.getElementById("slidervalue") +".0"*/,
       pointToLayer: function(geoJsonPoint, latlng) {
-            // return L.marker(latlng, {icon: IconStyleOne}); //options object for Marker
             return new L.CircleMarker(latlng, {
                   radius: 6, 
                   fillOpacity: 1, 
@@ -63,21 +52,12 @@ var dams =  L.esri.featureLayer({
             var popupContent = "<h1>"+ "Dam Name: "+"</h1>" +"<p >"+f.properties.Name +"</p>\n<h2>"+ "River: "+"</h2>" + "<p >"+f.properties.Completed +"</p>";
                   l.bindPopup(popupContent, {closeButton: false, closeOnEscapeKey : false});
       },
-      // filter: function (feature) {
-      //       // if (feature.properties.Completed !== "1936.0") return true
-      //       // return String(parseInt(feature.properties.Completed)) == "1936"
-      //       // return (feature.properties.Name == "Hoover Dam");
-      //       if (feature.properties.Name == "Hoover Dam") return true
-      // }
 }).addTo(map);
 
 
 var inundated_places = L.esri.featureLayer({
-// L.esri.Cluster.featureLayer({
       url: "https://services.arcgis.com/90tNmoLpchYB2Gc5/arcgis/rest/services/Atlas_of_Drowned_Towns_WFL1/FeatureServer/1",
-      
       pointToLayer: function(geoJsonPoint, latlng) {
-            // return L.marker(latlng, {icon: IconStyleTwo}); //options object for Marker
             return new L.CircleMarker(latlng, {
                         radius: 6, 
                         fillOpacity: 1, 
@@ -147,7 +127,6 @@ function lsidebtn()
 
 function openrside() {
       document.getElementById("rside").style.width = "249px";
-      // document.getElementById("rside").style.border-left-width = "1px";
       document.getElementById("rBtn").style.marginRight = "250px";
       $('#rside').css('border-left-width', '1px');
 }
@@ -188,7 +167,6 @@ slider.oninput = function() {
 document.getElementById("slidecontnr").addEventListener("change", function () {
       dams.setWhere("Completed <= '" + document.getElementById("slidervalue").textContent+".0"+"'");
       inundated_places.setWhere("Year_of_In <= '" + document.getElementById("slidervalue").textContent+".0"+"'");
-      // console.log("Completed = '" + document.getElementById("slidervalue").textContent+".0"+"'")
     });
 
 
