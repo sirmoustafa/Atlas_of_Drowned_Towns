@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Esri Leaflet Tutorials: Display a map</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" crossorigin=""></script>    
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
+    <!-- Load Esri Leaflet Vector from CDN -->
+    <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js" crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.css" />
+  <!-- Load Leaflet MarkerCluster and Esri Leaflet Cluster from CDN
+    <link rel="stylesheet" type="text/css"
+      href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.Default.css"
+      integrity="sha512-6ZCLMiYwTeli2rVh3XAPxy3YoR5fVxGdH/pz+KMCzRY2M65Emgkw00Yqmhh8qLGeYQ3LbVZGdmOX9KUjSKr0TA=="
+      crossorigin="">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.css"
+      integrity="sha512-mQ77VzAakzdpWdgfL/lM1ksNy89uFgibRQANsNneSTMD/bj0Y/8+94XMwYhnbzx8eki2hrbPpDm0vD0CiT2lcg=="
+      crossorigin="">
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.0/dist/leaflet.markercluster.js"
+      integrity="sha512-pWPELjRaw2ZdoT0PDi7iRpRlk1XX3rtnfejJ/HwskyojpHei+9hKpwdphC4yssNt4FM0TjMQOmMrk6ZYSn274w=="
+      crossorigin=""></script>
+    <script src="https://unpkg.com/esri-leaflet-cluster@3.0.1/dist/esri-leaflet-cluster.js"></script> -->
+
+
+
+    <style>
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+   
+    <div id="main">
+        <div id="lside" class="lside">
+            <a href="javascript:void(0)" class="lclosebtn" onclick="lsidebtn()">×</a>
+            <a>About</a>
+            <a>Services</a>
+            <a>Clients</a>
+            <a>Contact</a>
+          </div>
+        <div id="rside" class="rside">
+            <!-- <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a> -->
+            <div class="rtext">
+                <a href="javascript:void(0)" class="rclosebtn" onclick="rsidebtn()">×</a>
+                <h2>In 1916</h2>
+                <h5>there were.....</h5>
+                <h4>124,382</h4>
+                <h5>prople displaced</h5>
+                <h4>322</h4>
+                <h5>dams</h5>
+                <h4>94,212</h4>
+                <h5>square miles of reservoirs</h5>
+                <h4>82,330,842</h4>
+                <h5>MWh</h5>
+                <h4>47,828</h4>
+                <h5>acre-feet of storage</h5>
+                <h4>$22,127,899</h4>
+                <h5>for projects</h5>
+                <h4>$84,320</h4>
+                <h5>for displacement</h5>
+            </div>
+          </div>
+        <button id="lBtn" class="lbtn" onclick="lsidebtn()" value="OFF">☰</button>  
+        <button id="rBtn" class="rbtn" onclick="rsidebtn()" value="OFF">☰</button> 
+        <div class="zoom" >
+            <h3 class="zoomlvl">zoom level : <span id="lvl">a</span></h3>
+        </div> 
+        <div class="slidecontainer" id="slidecontnr" hidden>
+            <input type="range" min="1900" max="2000" value="1908" class="slider" id="myRange">
+            <p>Year: <span id="slidervalue"></span></p>
+        </div>
+        <div class="chck" >
+            <label for="yearchck"> Year Slider</label>
+            <input type="checkbox" id="yearchck"  value="yearslct" >
+        </div>
+    </div>
+
+
+    <div id="map"></div>
+    </div>
+
+    <script type="text/javascript" src="js\script.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,242 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+  height: 50%;
+  position: relative;
+  /* max-width: 50%; */
+  /* z-index: 99999; */
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #323232;
+}
+
+.zoom {
+  height: 50px;
+  width: 250px;
+  position: relative;
+  top: 10px;
+  left: 60px;
+  background-color: black;
+  z-index: -1;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.zoomlvl {
+  color: white;
+  top: 10px;
+  left: 30px;
+  position: relative;
+  text-align: left;
+  font-size: 26px;
+  display: table-cell;
+  z-index: 9999999;
+}
+
+.leaflet-control-zoom {
+  transition: 0.5s;
+  /* margin-top: 10px; */
+  left: 10px;
+}
+
+/* --------- =========================  Left side obj  ========================= --------- */
+
+.lside {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  background-color: #44443e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border: 0px black solid;
+}
+
+.lside a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.lside a:hover {
+  color: #f1f1f1;
+}
+
+.lbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #c0bd95;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  /* margin-left: 25%; */
+  z-index: 999999999;
+  position: absolute;
+  border-radius: 0% 50% 50% 0%;
+  top: 450px;
+  left: 0px;
+  transition: 0.5s;
+}
+
+.lbtn:hover {
+  background-color: #444;
+}
+
+/* --------- =========================  Right side obj  ========================= --------- */
+
+.rside {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  /* left: 0;  */
+  right: 0;
+  background-color: #c0bd95;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border: 0px black solid;
+
+}
+
+.rside a:hover {
+  color: #f1f1f1;
+}
+
+.rclosebtn {
+  font-size: 36px;
+  position: absolute;
+  /* padding: 8px 8px 8px 174px; */
+  color: #818181;
+  text-decoration: none;
+  right: 0;
+}
+
+.rbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #c0bd95;
+  color: white;
+  padding: 10px 15px;
+  border: 1px #c0bd95 solid;
+  z-index: 999999999;
+  position: absolute;
+  border-radius: 50% 0% 0% 50%;
+  top: 450px;
+  right: 0;
+  transition: 0.5s;
+}
+
+.rbtn:hover {
+  background-color: #444;
+  border: 1px #444 solid;
+}
+
+
+/* --------- =========================  headings  ========================= --------- */
+
+
+.rtext {
+  position: absolute;
+  left: 15PX;
+  font-family: cursive;
+  top: 0  ;
+}
+
+.rtext h2 {
+  margin: 70px 0px 0px;
+  font-size: 40px;
+}
+
+.rtext h4 {
+  margin: 5px 0px 0px;
+  color: #6c6a48;
+  font-size: 30px;
+}
+
+.rtext h5 {
+  margin: 5px 0px 35px;
+  font-size: 15px;
+  font-family: revert;
+}
+
+
+/* --------- =========================  Slider  ========================= --------- */
+.chck {
+  z-index: 999;
+  position: absolute;
+  top: 850px;
+  left: 125px;
+  font-family: cursive;
+  font-size: 25px;
+}
+
+.slidecontainer {
+  z-index: 99999999999999;
+  position: relative;
+  top: 800px;
+  left: 15%;
+  width: 70%;
+}
+
+.slidecontainer p {
+  text-align-last: center;
+  font-size: 31px;
+  margin: 6px;
+  font-weight: bold;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #6d6c6c;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #193027;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
